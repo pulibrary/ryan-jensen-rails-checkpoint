@@ -1,0 +1,103 @@
+/*
+ * This is a manifest file that'll be compiled into application.css.
+ *
+ * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
+ * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
+ * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
+ * depending on specificity.
+ *
+ * Consider organizing styles into separate files for maintainability.
+ */
+
+.title {
+    display: block;
+    justify-self: center;
+    margin: 20px 0;
+    font-size: 100px;
+    font-family: "Inter", sans-serif;
+    color: rgb(0, 128, 255);
+ }
+
+.caption {
+    display: block;
+    justify-self: center;
+    font-size: 30px;
+    font-family: "Inter", sans-serif;
+    color:rgb(0, 128, 255)
+ }
+
+.submit {
+    display: flex;
+    justify-self: center;
+    flex-direction: column;
+    font-family: "Inter", sans-serif;
+    max-width: 400px;
+}
+
+.enter_ingredient, .ingredient_button {
+    text-align: center;
+    font-size: 20px;
+    font-family: "Inter", sans-serif;
+    margin: 5px;
+    border: 2px solid rgb(0, 128, 255);
+    outline: none;
+}
+
+.enter_ingredient {
+    border-radius: 5px;
+    padding: 10px;
+    background-color: rgb(250, 245, 245);
+}
+
+.ingredient_button {
+    border-radius: 20px;
+    padding: 5px;
+    background-color: rgb(250, 255, 255);
+}
+
+.ingredient_button:hover {
+    background-color: rgb(230, 235, 235);
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.new_user_form {
+    display: block;
+    margin: 0;
+    justify-self: center;
+    margin-left: calc(257.961px - 181.500px);
+    width: fit-content;
+}
+
+.return_user_form {
+    display: block;
+    margin: 0;
+    justify-self: center;
+    width: fit-content;
+}
+
+#user_email, #user_password, #user_password_confirmation {
+    border-radius: 5px;
+    border: 2px solid rgb(0, 128, 255);
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    margin: 10px 0;
+}
+
+label, em {
+    justify-self: center;
+    margin: 0;
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    color:rgb(0, 128, 255);
+}
+
+.actions {
+    border-radius: 20px;
+    padding: 5px;
+    background-color: rgb(250, 255, 255);
+}
