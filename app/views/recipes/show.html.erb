@@ -1,0 +1,15 @@
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+</head>
+
+<div class="show">
+    <h2 class="caption">Here is your new recipe:</h2>
+    <h3 class="recipe"> <%= @recipe.name.upcase %> </h3><br>
+        <ul>
+            <% @recipe.ingredients.each do |ingredient| %>
+                <li class="ingredient"><%= ingredient.name %></li>
+            <% end %>
+        </ul>
+    <%= link_to "Add more ingredients", new_ingredient_path, class: "ingredient_button" %>
+</div>

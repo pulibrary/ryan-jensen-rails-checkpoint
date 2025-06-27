@@ -1,0 +1,19 @@
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"> 
+</head>
+
+<%= form_for(@recipe) do |f| %>
+  <div class="field">
+    <%= f.label :name, "Recipe Name" %><br />
+    <%= f.text_field :name, placeholder: "fried egg" %>
+  </div>
+
+  <div class="field">
+    <%= label_tag :ingredient_names, "Ingredients" %><br />
+    <%= text_field_tag :ingredient_names, "", placeholder: "salt, pepper, egg" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Add Recipe" %>
+  </div>
+<% end %>
