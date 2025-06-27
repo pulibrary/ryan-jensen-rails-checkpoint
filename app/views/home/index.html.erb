@@ -6,7 +6,6 @@
     <h1 class="title">RecipeSearch</h1>
     <h2 class="caption">Find the perfect recipe for you!</h2>
     <div class="submit">
-        <input class="enter_ingredient" type="text" name="ingredient" placeholder="Enter an ingredient">
-        <button class="ingredient_button" href="">Submit Ingredient</button>
+        <%= link_to "Add ingredients", ingredients_path, class: "ingredient_button" %>
     </div>
 </html>

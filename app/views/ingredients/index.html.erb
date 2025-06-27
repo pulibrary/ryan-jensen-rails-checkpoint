@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"> 
+    </head>
+
+    <h1 class="title">RecipeSearch</h1>
+    <h2 class="caption">Find the perfect recipe for you!</h2>
+    <div class="submit">
+
+    <%= form_for @ingredient do |f| %>
+        <%= label_tag :ingredient_names, "Ingredients" %><br />
+        <%= text_field_tag :ingredient_names, "", placeholder: "salt, pepper, egg" %>
+        <div class="actions">
+            <%= f.submit "Submit Ingredients", class: "ingredient_button" %>
+        </div>
+    <% end %>
+    
+    </div>
+</html>
