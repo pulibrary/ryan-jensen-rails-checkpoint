@@ -1,5 +1,7 @@
 class IngredientsController < ApplicationController
 
+  require "byebug"
+
   def index
     @ingredient = Ingredient.new
     @recipes = []
@@ -17,11 +19,7 @@ class IngredientsController < ApplicationController
     ingredient_names = params[:ingredient_names].to_s.split(',').map(&:strip).reject(&:empty?)
 
     ingredient_names.each do |name|
-      ingredient_id = Ingredient.find_by(name: name)&.id
-      recipe_id = RecipeIngredient.find_by(ingredient_id: ingredient_id)&.recipe_id
-      unless (@recipes.include?(Recipe.find(recipe_id)))
-        @recipes.push(Recipe.find(recipe_id))
-      end
+      @recipes.push(Recipe.joins(:ingredients).where("ingredients.name = ?", name))
     end
 
     render :show

@@ -1,0 +1,12 @@
+<div class="show">
+    <h2 class="caption">Here are your matching recipe:</h2>
+        <% @recipes.each do |r| %>
+            <h3 class="recipe"> <%= r.name.upcase %> </h3><br>
+            <% r.ingredient.each do |ingredient| %>
+                <ul>
+                    <li class="ingredient"><%= ingredient %></li>
+                </ul>
+            <% end %>
+        <% end %>
+    <%= link_to "Add more ingredients", ingredients_path, class: "ingredient_button" %>
+</div>

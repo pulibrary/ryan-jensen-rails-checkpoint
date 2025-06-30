@@ -4,14 +4,20 @@
 </head>
 
 <div class="show">
-    <h2 class="caption">Here are your matching recipe:</h2>
+    <% if @recipes[0] && @recipes[0].any? %>
+        <h2 class="caption">Here are your matching recipes:</h2>
         <% @recipes.each do |recipe| %>
-            <h3 class="recipe"> <%= recipe.name.upcase %> </h3><br>
-            <ul>
-                <% recipe.ingredients.each do |ingredient| %>
-                    <li class="ingredient"><%= ingredient.name %></li>
-                <% end %>
-            </ul>
+            <% recipe.each do |r| %>
+                <div class="full_recipe">
+                    <h3 class="recipe_name"> <%= r.name.upcase %> </h3>
+                    <% r.ingredients.each do |ingredient| %>
+                        <h3 class="ingredient">- <%= ingredient.name %></h3>
+                    <% end %>
+                </div>
+            <% end %>
         <% end %>
+    <% else %>
+        <h2 class="caption">There were no matching recipes,<br>try different ingredients</h2>
+    <% end %>
     <%= link_to "Add more ingredients", ingredients_path, class: "ingredient_button" %>
 </div>

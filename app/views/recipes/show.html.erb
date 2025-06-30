@@ -5,11 +5,11 @@
 
 <div class="show">
     <h2 class="caption">Here is your new recipe:</h2>
-    <h3 class="recipe"> <%= @recipe.name.upcase %> </h3><br>
-        <ul>
-            <% @recipe.ingredients.each do |ingredient| %>
-                <li class="ingredient"><%= ingredient.name %></li>
-            <% end %>
-        </ul>
-    <%= link_to "Add more ingredients", new_ingredient_path, class: "ingredient_button" %>
+    <div class="full_recipe">
+        <h3 class="recipe_name"> <%= @recipe.name.upcase %> </h3>
+        <% @recipe.ingredients.each do |ingredient| %>
+            <h3 class="ingredient">- <%= ingredient.name %></h3>
+        <% end %>
+    </div>
+    <%= link_to "Add more ingredients", new_recipe_path, class: "ingredient_button" %>
 </div>
