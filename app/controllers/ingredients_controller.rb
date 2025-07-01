@@ -19,7 +19,8 @@ class IngredientsController < ApplicationController
     ingredient_names = params[:ingredient_names].to_s.split(',').map(&:strip).reject(&:empty?)
 
     ingredient_names.each do |name|
-      @recipes.push(Recipe.joins(:ingredients).where("ingredients.name = ?", name))
+      matching_recipes = Recipe.joins(:ingredients).where("ingredients.name = ?", name)
+      @recipes.concat(matching_recipes).uniq!
     end
 
     render :show
