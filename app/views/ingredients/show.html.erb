@@ -4,17 +4,15 @@
 </head>
 
 <div class="show">
-    <% if @recipes[0] && @recipes[0].any? %>
+    <% if @recipes && @recipes.any? %>
         <h2 class="caption">Here are your matching recipes:</h2>
         <% @recipes.each do |recipe| %>
-            <% recipe.each do |r| %>
-                <div class="full_recipe">
-                    <h3 class="recipe_name"> <%= r.name.upcase %> </h3>
-                    <% r.ingredients.each do |ingredient| %>
-                        <h3 class="ingredient">- <%= ingredient.name %></h3>
-                    <% end %>
-                </div>
-            <% end %>
+            <div class="full_recipe">
+                <h3 class="recipe_name"> <%= recipe.name.upcase %> </h3>
+                <% recipe.ingredients.each do |ingredient| %>
+                    <h3 class="ingredient">- <%= ingredient.name %></h3>
+                <% end %>
+            </div>
         <% end %>
     <% else %>
         <h2 class="caption">There were no matching recipes,<br>try different ingredients</h2>
